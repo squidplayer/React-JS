@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #list{
+            border: 1px solid black;
+
+        }
+        li{
+            padding: 5px;
+            
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+    </ul>
+
+
+    <script>
+        const listitems = document.querySelectorAll('#list li');
+        const handleHover = (event) =>{
+            return event.target.innerText = 'ON';
+        };
+
+        if(listitems.length> 1)
+        {
+            listitems.forEach(item => item.addEventListener('mouseover', handleHover));
+            // Array.from(listitems).forEach(item => item  .addEventListener('mouseover', handleHover));
+        }
+    </script>
+</body>
+</html>                                                              

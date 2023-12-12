@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .element{
+            border-radius: 50%;
+            padding: 20px;
+            background-color: rgb(114, 114, 255);
+            font-size: larger;
+            display: inline-block;
+            /* display: flex; */
+            /* align-items: center; */
+            justify-content: center;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="element" onmouseenter="changeText()" onmouseleave="resetText()">
+        Hover me
+    </div>
+
+
+    <script>
+        const element = document.querySelector('.element');
+
+        const changeText = ()=>{
+            element.innerText = 'Thanks';
+        }
+
+        const resetText = ()=>{
+            element.innerText = "Hover me"
+        }
+
+
+    </script>
+</body>
+</html>

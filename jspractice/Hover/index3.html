@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        .element {
+            border-radius: 50%;
+            padding: 20px;
+            font-size: larger;
+            display: inline-block;
+        }
+    </style>
+<body>
+    <div class="element" onmouseenter="toggleColor(true)" onmouseleave="toggleColor(false)">
+        Hover me
+    </div>
+
+
+    <script>
+        const element = document.querySelector('.element');
+        
+        const toggleColor = (isEntering)=>{
+            element.style.background = isEntering ? 'orange': 'black';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* App.css */
+
+.main-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.lists {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #eee;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}

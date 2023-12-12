@@ -1,0 +1,16 @@
+.element{
+    display: flex;
+    
+}
+
+li{
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 500px;
+}
+#btn{
+    width: 50px;
+    height: 10px
+
+}

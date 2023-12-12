@@ -1,0 +1,49 @@
+# 1. Group by a Single Field in MongoDB
+
+# /*
+# # Usage of $group stage to group a single field
+# db.student.aggregate([
+#   { $group: { _id: "$age", marks: { $sum: 1 } } }
+# ])
+# */
+
+
+# 2. Group by Multiple Fields in MongoDB: 
+# /*
+#     db.student.aggregate([
+#   { $group: { _id: { firstName: "$firstName", lastName: "$lastName" },
+#              age: { $sum: 1 } 
+#             } 
+#    }
+# ])
+
+# */
+
+# 3 Group by the Multiple Expressions:
+
+# # $ Usage of multiple expressions to group values
+# # db.student.aggregate([
+# #   { $group: { _id: { projectMarks: "$projectMarks" }, 
+# #          total_examsMarks: { $sum: "$examsMarks" }, 
+# #          total_assignmentMarks: { $sum: "$assignmentMarks" } 
+# #          } 
+# #    }
+# # ])
+
+
+4. Group by the Conditional Statements in MongoDB
+
+db.student.aggregate([
+  { $match: { projectMarks: { $eq: 99 } } },
+  { $group: { _id: "$age", assignmentMarks: { $sum: 1 } } }
+])
+
+
+5 Group by nested field 
+
+db.student.aggregate([
+  { $unwind: "$status" },
+  { $group: { _id: "$status.course", Batch_No: { $sum: "$status.batch" } } }
+])
+
+

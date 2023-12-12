@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <button id="inc">Increment</button>
+        <input id="num" type="text" value="0" >
+        
+        <button id="dec">Decrement</button>
+    </div>
+</body>
+
+    <script>
+        const inc = document.querySelector('#inc')
+        const num = document.querySelector('#num'); 
+
+        let val = parseInt(num.value);  
+        const dec = document.querySelector('#dec')
+
+        
+
+        console.log(num)
+        inc.addEventListener('click', ()=>{
+            
+            val+= 1;
+            num.value = val;
+        })
+
+        dec.addEventListener('click', ()=>{
+            val-= 1;
+            if(val<0)
+            val=0;
+            num.value = val;
+        })
+    </script>
+
+</html>

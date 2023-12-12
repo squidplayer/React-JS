@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname"> 
+
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname">
+
+
+    <label for="fullname">Full name</label>
+    <input type="text" id="fullname" readonly>
+
+    <button onclick="getfullname()">Click me</button>
+</body>
+
+    <script>
+        let fn= document.querySelector('#firstname')
+        let ln= document.querySelector('#lastname')
+
+        let fulln = document.querySelector('#fullname');
+
+
+        const getfullname = ()=>{
+            const fullname = `${fn.value} ${ln.value}`;
+
+            fulln.value = fullname;
+        }
+    </script>
+</html>

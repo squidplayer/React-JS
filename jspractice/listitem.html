@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Filter</title>
+    <style>
+        #myInput {
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .list-item {
+            display: none;
+            padding: 8px;
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            background-color: #f6f6f6;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Dynamic Input Filter</h2>
+
+    <input type="text" id="myInput" placeholder="Search for items">
+
+    <ul id="myList">
+        <li class="list-item">Apple</li>
+        <li class="list-item">Banana</li>
+        <li class="list-item">Cherry</li>
+        <li class="list-item">Date</li>
+        <li class="list-item">Grapes</li>
+        <li class="list-item">Gun</li>
+        <li class="list-item">Gulaabs</li>
+        <li class="list-item">Halwa</li>
+        <li class="list-item">Honey</li>
+        <li class="list-item">Hola</li>
+    </ul>
+
+    <script>
+        const input = document.getElementById('myInput');
+        const listItems = document.querySelectorAll('.list-item');
+
+        input.addEventListener('input', function () {
+            const searchTerm = input.value.toLowerCase();
+
+            listItems.forEach(item => {
+                const textContent = item.textContent.toLowerCase();
+
+                if (textContent.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

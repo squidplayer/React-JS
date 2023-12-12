@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+    <style>
+        .container{
+            display: flex;
+
+        }
+        .balloon{
+            padding: 20px;
+            background-color: red;
+            color: white;
+            margin: 10px;
+            border-radius: 30px;
+        }
+    </style>
+
+<body>
+    <div class="container">
+        <div class="balloon" onmouseenter="hover(this)">B1</div>
+        <div class="balloon" onmouseenter="hover(this)">B2</div>
+        <div class="balloon" onmouseenter="hover(this)">B3</div>
+        <div class="balloon" onmouseenter="hover(this)">B4</div>
+        <div class="balloon" onmouseenter="hover(this)">B5</div>
+        <div class="balloon" onmouseenter="hover(this)">B6</div>
+        <div class="balloon" onmouseenter="hover(this)">B7</div>
+        <div class="balloon" onmouseenter="hover(this)">B8</div>
+        <div class="balloon" onmouseenter="hover(this)">B9</div>
+        <div class="balloon" onmouseenter="hover(this)">B10</div>
+
+
+        <button>Refresh me</button>
+    </div>
+        
+    <script>
+        const balloon = document.querySelectorAll('.balloon');
+
+        const hover = (element)=>{
+            element.style.backgroundColor = 'white';
+        }
+
+        document.querySelector('button').addEventListener('click', ()=>{
+            balloon.forEach((item)=>{
+                item.style.backgroundColor = 'red';
+            })
+        })
+    </script>
+</body>
+</html>

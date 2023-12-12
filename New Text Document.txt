@@ -1,0 +1,77 @@
+/* db.aniket.aggregate([
+  { $group: { _id: "$lastname", countofeachsurname: { $sum: 1 } }, '$sort': {countofeachsurnames: 1}},
+]);
+
+db.college.find().sort({rating: -1}).limit(3)
+[
+  {
+    _id: ObjectId("6575714ca288b9a6a65e7aaa"),
+    name: 'Uncharted',
+    genre: 'Horror',
+    rating: 100
+  },
+  {
+    _id: ObjectId("6575711aa288b9a6a65e7aa8"),
+    name: 'Vice City',
+    genre: 'Horror',
+    rating: 99
+  },
+  {
+    _id: ObjectId("657570f1a288b9a6a65e7aa7"),
+    name: 'GTA5',
+    genre: 'Action',
+    rating: 78
+  }
+]
+
+
+db.college.update({name: 'GTA5'}, {$set: {achievements: {'Game Master': true, 'Speed Daemon': true}}})
+
+
+
+
+
+
+// Function to increment the roll no of each student by 2
+
+db.college.updateMany({}, {$inc: {rating: 3}})
+
+
+// Map reduce 
+
+
+ var map = function(){emit(this.lastname, this.Roll_no)}
+ var reduce =  function(lastname, Roll_no){return Array.sum(Roll_no)}
+ db.aniket.mapReduce(map, reduce, {out: "result"});
+ db.result.find()
+
+
+ UpdateOne operation in mongodb
+db.aniket.updateOne({_id:  ObjectId("65755205a288b9a6a65e7a9c")}, {$set: {'Roll_no': 57}})
+
+
+For aggregating 
+
+
+db.aniket.aggregate([{$match: {lastname: 'Gandhi'}}])
+
+
+db.aniket.aggregate([
+  {
+    $group: {
+      _id: '$lastname',
+      studentdata: { $push: '$$ROOT' }
+    }
+  }
+]);
+
+
+aggregate by the surname field 
+db.aniket.aggregate([{$group: {_id: '$lastname', countofeachsurname: {$sum: 1}}}])
+
+
+
+
+
+
+*/

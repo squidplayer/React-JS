@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers Sum Calculator</title>
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 5px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #sum {
+            color: #e44d26;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Even Numbers Sum Calculator</h1>
+
+    <label for="numbersInput">Enter Numbers (comma-separated): </label>
+    <input type="text" id="numbersInput" placeholder="e.g., 2, 4, 6, 8">
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <p id="result">Sum of Even Numbers: <span id="sum"></span></p>
+
+    <script>
+        function calculateSum() {
+            // Get input value and convert it to an array of numbers
+            const input = document.getElementById('numbersInput').value;
+            const numbersArray = input.split(',').map(num => parseInt(num, 10));
+
+            // Filter even numbers and calculate their sum
+            const evenNumbers = numbersArray.filter(num => num % 2 === 0);
+            const sum = evenNumbers.reduce((acc, num) => acc + num, 0);
+
+            // Display the result
+            document.getElementById('sum').textContent = sum;
+        }
+    </script>
+
+</body>
+
+</html>
